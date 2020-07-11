@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.bigtester</groupId>
 	<artifactId>openfaas-springboot-common</artifactId>
-	<version>1.5.10-SNAPSHOT</version>
+	<version>1.5.10</version>
 	<packaging>jar</packaging>
 
 	<name>java-springboot-common</name>
@@ -15,7 +14,7 @@
 		<connection>scm:git:git@github.com:peidong-hu/faas-java-templates.git</connection>
 		<url>scm:git:git@github.com:peidong-hu/faas-java-templates.git</url>
 		<developerConnection>scm:git:git@github.com:peidong-hu/faas-java-templates.git</developerConnection>
-		<tag>v1.5.10</tag>
+		<tag>openfaas-springboot-common-1.5.10</tag>
 	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
