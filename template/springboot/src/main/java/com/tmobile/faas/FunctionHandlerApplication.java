@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "function")
+@ComponentScan(basePackages = {"function", "com.tmobile.faas"})
 public class FunctionHandlerApplication {
 
 	public static void main(String[] args) {
