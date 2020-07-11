@@ -10,6 +10,13 @@
 
 	<name>java-springboot-common</name>
 	<description>Springboot template common for Faas</description>
+
+<scm>
+		<connection>scm:git:git@github.com:peidong-hu/faas-java-templates.git</connection>
+		<url>scm:git:git@github.com:peidong-hu/faas-java-templates.git</url>
+		<developerConnection>scm:git:git@github.com:peidong-hu/faas-java-templates.git</developerConnection>
+		<tag>v1.5.10</tag>
+	</scm>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
