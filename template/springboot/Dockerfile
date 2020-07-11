@@ -13,13 +13,14 @@ RUN cd function \
     && cd ../ \
     && mvn clean install -DskipTests
 
-RUN apk --no-cache add curl \
-    && echo "Pulling watchdog binary from Github." \
-    && curl -sSLf https://github.com/openfaas-incubator/of-watchdog/releases/download/0.2.1/of-watchdog > /usr/bin/fwatchdog \
-    && chmod +x /usr/bin/fwatchdog \
-    && apk del curl --no-cache
+FROM openfaas/of-watchdog:0.7.6 as watchdog
 
-FROM openjdk:8-alpine
+FROM openjdk:8u212-jdk-alpine as ship
+
+COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
+RUN chmod +x /usr/bin/fwatchdog                   
+
+#FROM openjdk:8-alpine
 
 RUN apk --no-cache add ca-certificates
 
