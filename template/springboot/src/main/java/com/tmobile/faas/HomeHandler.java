@@ -32,10 +32,17 @@ public class HomeHandler {
 
     @Autowired
     private Handler handler;
+   
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public ResponseEntity<String> handle(@RequestBody @Valid byte[] payload) {
         String response = handler.handle(payload);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<String> handle() {
+        String response = handler.handle();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
 }
