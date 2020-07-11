@@ -25,7 +25,7 @@ RUN chmod +x /usr/bin/fwatchdog
 RUN apk --no-cache add ca-certificates
 
 COPY --from=builder /root/springboot/target/*.jar app.jar
-COPY --from=builder /usr/bin/fwatchdog .
+COPY --from=watchdog /fwatchdog .
 
 ENV fprocess="java -jar app.jar"
 ENV mode="http"
