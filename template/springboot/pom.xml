@@ -27,6 +27,11 @@
 	</properties>
 
 	<dependencies>
+                <dependency>
+                	<groupId>org.bigtester</groupId>
+                	<artifactId>openfaas-springboot-common</artifactId>
+                	<version>1.5.10-SNAPSHOT</version>
+                </dependency>
 		<!-- SpringBoot dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
