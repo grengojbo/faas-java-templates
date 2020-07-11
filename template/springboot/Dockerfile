@@ -29,7 +29,8 @@ COPY --from=watchdog /fwatchdog .
 
 ENV fprocess="java -jar app.jar"
 ENV mode="http"
-ENV upstream_url="http://127.0.0.1:8081"
+ENV upstream_url="http://127.0.0.1:8082"
+EXPOSE 8080
 
 CMD ["./fwatchdog"]
 
