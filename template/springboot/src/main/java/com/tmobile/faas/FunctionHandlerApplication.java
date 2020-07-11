@@ -16,7 +16,7 @@
 // =========================================================================
 package com.tmobile.faas;
 
-import function.Handler;
+//import function.Handler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -25,13 +25,13 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"function", "com.tmobile.faas"})
 public class FunctionHandlerApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(FunctionHandlerApplication.class, args);
 	}
 
-	@Bean
-	RequestHandler getHandler() {
-		return (RequestHandler) (new Handler());
-	}
+//	@Bean
+//	RequestHandler getHandler() {
+//		return (RequestHandler) (new Handler());
+//	}
 }

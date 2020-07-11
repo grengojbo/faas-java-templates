@@ -4,20 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.bigtester</groupId>
-	<artifactId>openfaas-springboot-template</artifactId>
+	<artifactId>openfaas-springboot-common</artifactId>
 	<version>1.5.10-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>java-springboot</name>
-	<description>Springboot template for Faas</description>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-
+	<name>java-springboot-common</name>
+	<description>Springboot template common for Faas</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -36,24 +28,6 @@
   </repository>
 </distributionManagement>
 
-	<dependencies>
-		<!-- SpringBoot dependencies -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-		</dependency>
-
-<!--		<dependency>
-			<groupId>function</groupId>
-			<artifactId>handler</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
--->
-	</dependencies>
 
 	<build>
 		<plugins>
@@ -122,10 +96,6 @@
         </execution>
       </executions>
     </plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 		</plugins>
 	</build>
 
