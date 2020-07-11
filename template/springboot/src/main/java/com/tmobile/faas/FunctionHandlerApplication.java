@@ -31,7 +31,7 @@ public class FunctionHandlerApplication {
 	}
 
 	@Bean
-	Handler getHandler() {
-		return new Handler();
+	RequestHandler getHandler() {
+		return (RequestHandler) (new Handler());
 	}
 }
