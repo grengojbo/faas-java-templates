@@ -4,4 +4,6 @@ server:
 spring:
   application:
     name: function
+  main:
+    lazy-initialization: true
 
