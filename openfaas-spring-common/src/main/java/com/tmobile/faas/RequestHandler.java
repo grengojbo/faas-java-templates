@@ -50,7 +50,7 @@ public interface RequestHandler {
 			if (StringUtils.isNotBlank(System.getenv("secret_mount_path"))) {
 				basePath = System.getenv("secret_mount_path");
 			}
-			return basePath + "gitSshPrivateKey";
+			return basePath + "git-private-key";
 		}
 
 	}
