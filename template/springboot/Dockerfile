@@ -3,11 +3,14 @@ FROM maven:3.5-jdk-8-alpine as builder
 ENV APP_HOME=/root/springboot/
 
 RUN mkdir -p $APP_HOME/function
+RUN apk add xmlstarlet
 
 WORKDIR $APP_HOME
 
 COPY . .
-
+RUN xmlstarlet ed -L  -N w=http://maven.apache.org/POM/4.0.0         --update "//w:artifactId"            --value handler  function/pom.xml
+RUN xmlstarlet ed -L  -N w=http://maven.apache.org/POM/4.0.0         --update "//w:groupId"            --value function function/pom.xml
+RUN xmlstarlet ed -L  -N w=http://maven.apache.org/POM/4.0.0         --update "//w:version"            --value 1.0-SNAPSHOT  function/pom.xml
 RUN cd function \
     && mvn clean install \
     && cd ../ \

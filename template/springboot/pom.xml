@@ -52,12 +52,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 
-<!--		<dependency>
+		<dependency>
 			<groupId>function</groupId>
 			<artifactId>handler</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
--->
+
 	</dependencies>
 
 	<build>
