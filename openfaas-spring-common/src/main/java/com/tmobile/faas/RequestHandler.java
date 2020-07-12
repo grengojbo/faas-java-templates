@@ -42,7 +42,7 @@ public interface RequestHandler {
 			basePath = System.getenv("secret_mount_path");
 		}
 		String userHomeDir = System.getProperty("user.home");
-		File tempFile = new File(userHomeDir + ".ssh/id_rsa");
+		File tempFile = new File(userHomeDir + "/.ssh/id_rsa");
 		if (tempFile.exists()) {
 			return userHomeDir + ".ssh/id_rsa";
 		} else {
