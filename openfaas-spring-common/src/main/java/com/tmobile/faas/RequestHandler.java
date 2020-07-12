@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.junit.platform.commons.util.StringUtils;
+
 public interface RequestHandler {
 
 	String handle(byte[] requestPayload);
@@ -13,7 +15,7 @@ public interface RequestHandler {
 
 	public static String readSecret(String key) {
 		String basePath = "/var/openfaas/secrets/";
-		if (!System.getenv("secret_mount_path").isEmpty()) {
+		if (StringUtils.isNotBlank(System.getenv("secret_mount_path"))) {
 			basePath = System.getenv("secret_mount_path");
 		}
 
@@ -37,15 +39,17 @@ public interface RequestHandler {
 	}
 	
 	public static String getPrivateKeyPath() {
-		String basePath = "/var/openfaas/secrets/";
-		if (!System.getenv("secret_mount_path").isEmpty()) {
-			basePath = System.getenv("secret_mount_path");
-		}
+		
 		String userHomeDir = System.getProperty("user.home");
-		File tempFile = new File(userHomeDir + "/.ssh/id_rsa");
+		String keyFilePath = userHomeDir + "/.ssh/id_rsa";
+		File tempFile = new File(keyFilePath);
 		if (tempFile.exists()) {
-			return userHomeDir + ".ssh/id_rsa";
+			return keyFilePath;
 		} else {
+			String basePath = "/var/openfaas/secrets/";
+			if (StringUtils.isNotBlank(System.getenv("secret_mount_path"))) {
+				basePath = System.getenv("secret_mount_path");
+			}
 			return basePath + "gitSshPrivateKey";
 		}
 

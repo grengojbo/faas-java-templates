@@ -40,14 +40,14 @@ class RequestHanlderTest {
 	@Test
 	void test() {
 		
-
+		System.out.println(RequestHandler.getPrivateKeyPath());
 		try {
 			setEnv(Collections.singletonMap("secret_mount_path", System.getProperty("user.dir") + "/"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(RequestHandler.getPrivateKeyPath());
+		
 	}
 
 }
