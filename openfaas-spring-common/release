@@ -1,0 +1,5 @@
+mvn release:clean
+mvn release:prepare -Darguments="-DskipTests=true " -DignoreSnapshots=true
+mvn release:perform -Darguments="-DskipTests=true " -DignoreSnapshots=true
+
+
