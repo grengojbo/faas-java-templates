@@ -26,8 +26,11 @@ RUN chmod +x /usr/bin/fwatchdog
 #FROM openjdk:8-alpine
 
 RUN apk --no-cache add ca-certificates
-
+USER root
+RUN mkdir -p /home/app
+WORDDIR /home/app
 COPY --from=builder /root/springboot/target/*.jar app.jar
+COPY --from=builder /root/springboot/function/* .
 COPY --from=watchdog /fwatchdog .
 
 ENV fprocess="java -jar app.jar"
