@@ -30,7 +30,7 @@ USER root
 RUN mkdir -p /home/app
 WORKDIR /home/app
 COPY --from=builder /root/springboot/target/*.jar app.jar
-COPY --from=builder /root/springboot/function/* .
+COPY --from=builder /root/springboot/function/ .
 COPY --from=watchdog /fwatchdog .
 
 ENV fprocess="java -jar app.jar"
